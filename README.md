@@ -4,13 +4,27 @@ Search and retrieve 200,000+ icons from 150+ icon collections. Works as an MCP s
 
 ## Quick Start
 
-### Add SKills
+### Add Skills
 
-You can enable the underlying icons cli usage using skills
+Enable the `better-icons` CLI features in your agent environment (matches all examples below):
 
 ```bash
-npx add-skill better-auth/better-icons
+npx skills add better-auth/better-icons
 ```
+
+### Direct CLI Installation
+
+Alternatively, install the CLI globally for direct non-agent use:
+
+```bash
+# Using npm
+npm install -g better-icons
+
+# Using Bun (faster)
+bun add -g better-icons
+```
+
+---
 
 ### MCP Server (AI Agents)
 
@@ -35,18 +49,20 @@ Or [configure manually](#manual-installation).
 Use the CLI to search and retrieve icons directly from your terminal.
 
 ```bash
-# Search for icons
-npx better-icons search arrow
-npx better-icons search home --prefix lucide --limit 10
+# 1. Search for icons (finds icons across 150+ collections)
+npx better-icons search arrow --limit 10
+npx better-icons search home --prefix lucide
 
-# Get icon SVG (outputs to stdout)
+# 2. Get icon SVG (outputs raw code or saves to file)
 npx better-icons get lucide:home > icon.svg
 npx better-icons get mdi:account --color '#333' --size 24
 
-# JSON output for scripting
+# 3. JSON output for scripting
 npx better-icons search settings --json | jq '.icons[:5]'
 npx better-icons get heroicons:check --json
 ```
+
+
 
 ## Why?
 
